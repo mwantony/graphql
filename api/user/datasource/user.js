@@ -6,7 +6,10 @@ class UsersAPI extends RESTDataSource {
     this.baseURL = 'http://localhost:3000'
   }
   async getUsers() {
-    this.get('/users')
+    return this.get('/users')
+  }
+  async getUserById(id) {
+    return this.get(`/users/${id}`)
   }
 }
 
