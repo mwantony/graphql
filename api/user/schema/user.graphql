@@ -2,9 +2,15 @@ const {gql} = require("apollo-server")
 
 const userSchema = gql `
   type User {
-    nome: String!,
-    ativo: Boolean!,
+    nome: String!
+    ativo: Boolean!
     email: String
+    role: Role!
+  }
+
+  type Role {
+    id: ID!
+    type: String!
   }
 
   type Query {
