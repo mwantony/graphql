@@ -22,6 +22,7 @@ class UsersAPI extends RESTDataSource {
     user.role = await this.get(`/roles/${user.role}`)
     return user
   }
+  
 }
 
 module.exports = UsersAPI
