@@ -2,23 +2,9 @@
   "users": [
     {
       "id": 2,
-      "nome": "Ana Torre",
-      "ativo": true,
-      "email": "a@a.com",
-      "role": 1
-    },
-    {
-      "id": 2,
       "nome": "Gabriel Costa",
       "ativo": true,
       "email": "g@g.com",
-      "role": 1
-    },
-    {
-      "id": 3,
-      "nome": "Flavia Lins",
-      "ativo": true,
-      "email": "f@f.com",
       "role": 1
     },
     {
@@ -41,13 +27,6 @@
       "ativo": true,
       "email": "m@m.com",
       "role": 2
-    },
-    {
-      "nome": "Antony",
-      "ativo": true,
-      "email": "again",
-      "role": 2,
-      "id": 7
     }
   ],
   "roles": [
