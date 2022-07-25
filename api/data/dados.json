@@ -45,7 +45,6 @@
       "nome": "Antony",
       "ativo": true,
       "role": 1,
-      "createdAt": "2022-07-25T00:00:00.000Z",
       "id": 7
     },
     {
@@ -110,6 +109,13 @@
       "role": 1,
       "createdAt": "2022-07-25T00:00:00.000Z",
       "id": 16
+    },
+    {
+      "nome": "Antony",
+      "ativo": true,
+      "role": 1,
+      "createdAt": "2022-07-25T00:00:00.000Z",
+      "id": 17
     }
   ],
   "roles": [
