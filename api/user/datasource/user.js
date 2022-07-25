@@ -4,6 +4,10 @@ class UsersAPI extends RESTDataSource {
   constructor() {
     super();
     this.baseURL = "http://localhost:3000";
+    this.respostaCustom = {
+      code: 200,
+      mensagem: "operação efetuada com sucesso",
+    };
   }
   async getUsers() {
     const users = await this.get("/users");
@@ -29,23 +33,44 @@ class UsersAPI extends RESTDataSource {
       `roles?type=${String(user.role).toUpperCase()}`
     );
     await this.post("users", { ...user, role: role[0].id });
+    this.respostaCustom.code = 201
+    this.respostaCustom.mensagem = `Usuário de id ${users.length + 1} criado`
     return {
+      ...this.respostaCustom,
+      user: {
       ...user,
       role: role[0],
+    }
     };
   }
   async atualizaUser(novosDados) {
-    const role = await this.get(`roles?type=${String(novosDados.user.role).toUpperCase()}`)
-    await this.put(`users/${novosDados.id}`, {...novosDados.user, role: role[0].id})
-    return ({
+    const role = await this.get(
+      `roles?type=${String(novosDados.user.role).toUpperCase()}`
+    );
+    await this.put(`users/${novosDados.id}`, {
       ...novosDados.user,
-      role: role[0]
-    })
+      role: role[0].id,
+    });
+    this.respostaCustom.mensagem = `Usuário de id ${novosDados.id} atualizado`
+    return {
+      ...this.respostaCustom,
+      user: {
+        ...novosDados.user,
+        role: role[0],
+      },
+    };
   }
   async deletaUser(id) {
-    const user = await this.get(`users/${id}`)
-    await this.delete(`users/${id}`)
-    return user.id
+    const user = await this.get(`users/${id}`);
+    await this.delete(`users/${id}`);
+    this.respostaCustom.mensagem = `Usuário de id ${user.id} deletado com sucesso`
+    this.respostaCustom.code = 200
+    return {
+      ...this.respostaCustom,
+      users: {
+        ...user
+      }
+    };
   }
 }
 

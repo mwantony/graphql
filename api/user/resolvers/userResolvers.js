@@ -1,6 +1,11 @@
 const {GraphQLScalarType} = require('graphql')
 
 const userResolvers = {
+  respostaCustom: {
+    __resolveType(obj, context, info) {
+      return false
+    },
+  },
   RolesType: {
     ESTUDANTE: "ESTUDANTE",
     DOCENTE: "DOCENTE",
