@@ -1,32 +1,38 @@
 {
   "users": [
     {
-      "id": 2,
-      "nome": "Gabriel Costa",
+      "nome": "Antony",
       "ativo": true,
-      "email": "g@g.com",
-      "role": 1
+      "role": 1,
+      "id": 1
     },
     {
-      "id": 4,
-      "nome": "Carlos Marques",
+      "nome": "Antony",
       "ativo": true,
-      "email": "c@c.com",
-      "role": 2
+      "role": 1,
+      "createdAt": "2022-07-25T00:00:00.000Z",
+      "id": 2
     },
     {
-      "id": 5,
-      "nome": "Silvia Souza",
+      "nome": "Antony",
       "ativo": true,
-      "email": "s@s.com",
-      "role": 2
+      "role": 1,
+      "createdAt": "2022-07-25T00:00:00.000Z",
+      "id": 3
     },
     {
-      "id": 6,
-      "nome": "Marcia Silva",
+      "nome": "Antony",
       "ativo": true,
-      "email": "m@m.com",
-      "role": 2
+      "role": 1,
+      "createdAt": "2022-07-25T00:00:00.000Z",
+      "id": 4
+    },
+    {
+      "nome": "Antony",
+      "ativo": true,
+      "role": 1,
+      "createdAt": "2022-07-25T00:00:00.000Z",
+      "id": 5
     }
   ],
   "roles": [
