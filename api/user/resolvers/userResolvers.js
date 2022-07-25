@@ -1,4 +1,13 @@
+const {GraphQLScalarType} = require('graphql')
+
 const userResolvers = {
+  DateTime: new GraphQLScalarType({
+    name: "DateTime",
+    description: "string de data e hora no formato USO-8601",
+    serialize: (value) => value.toISOString(),
+    parseValue: (value) => new Date(value),
+    parseLiteral: (ast) => new Date(ast.value)
+  }),
   Query: {
     users: (root, args, { dataSources }, info) => dataSources.usersApi.getUsers(),
     user: (root, {id}, {dataSources}) => dataSources.usersApi.getUserById(id)
